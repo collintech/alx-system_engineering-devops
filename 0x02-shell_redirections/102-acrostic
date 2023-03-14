@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "$(while read l;do echo -n "${l:0:1}";done<<<"$(while read l;do read -r;echo "$l";done)";echo)"
+
