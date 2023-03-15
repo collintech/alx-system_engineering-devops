@@ -1,0 +1,2 @@
+#!/bin/bash
+ls -l myfile | tr -s ' ' | cut -d ' ' -f 5
