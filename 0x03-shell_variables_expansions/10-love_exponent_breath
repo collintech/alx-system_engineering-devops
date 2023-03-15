@@ -1,2 +1,4 @@
 #!/bin/bash
-echo $(echo "$BREATH^$LOVE" | bc -l)
+result=$(( $BREATH ** $LOVE ))\n
+echo $result\n
+echo

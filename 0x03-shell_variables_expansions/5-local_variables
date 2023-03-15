@@ -1,2 +1,7 @@
 #!/bin/bash
-echo -e "Local Variables:\n$(compgen -v | while read var; do if [[ $var != BASH_* && $var != FUNCNAME && $var != var ]]; then echo "$var=${!var}"; fi done)\nEnvironment Variables:\n$(printenv | sort)\nFunctions:\n$(declare -F | while read func; do echo ${func#*_}; done)"
+echo "Local variables:"\n
+echo $(set | grep "^\(.\+\)=\(.\+\)$")\n
+echo "Environment variables:"\n
+echo $(env)\n
+echo "Functions:"\n
+echo $(declare -F | cut -d ' ' -f 3)

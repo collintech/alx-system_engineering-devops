@@ -1,2 +1,4 @@
 #!/bin/bash
-echo "There are $(echo $PATH | tr ':' '\n' | wc -l) directories in the PATH."
+IFS=':' read -ra path_dirs <<< "$PATH"\n
+num_dirs=${#path_dirs[@]}\n
+echo "$num_dirs"

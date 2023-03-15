@@ -1,2 +1,5 @@
 #!/bin/bash
-echo "obase=bestchol; ibase=$WATER; $WATER + $STIR" | bc
+WATER_10=$((36#${WATER}))\n
+STIR_10=$((36#${STIR}))\n
+BESTCHOL=$(echo "obase=bestchol;ibase=10;${WATER_10}+${STIR_10}" | bc)\n
+echo ${BESTCHOL}

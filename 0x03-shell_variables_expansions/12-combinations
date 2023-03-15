@@ -1,2 +1,8 @@
 #!/bin/bash
-for a in {a..z};do for b in {a..z};do [[ $a$b == oo ]]||echo $a$b;done;done
+for i in {a..z}; do\n
+	  for j in {a..z}; do\n
+		      if [[ $i$j != oo ]]; then\n
+			            echo $i$j\n
+				        fi\n
+					  done\n
+				  done
